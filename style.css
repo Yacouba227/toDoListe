@@ -116,7 +116,6 @@ input[type=date]:invalid::-webkit-datetime-edit {
     border-radius: 0 0 0 8px;
     text-align: center;
     width: 100%;
-    height: 205px;
 }
 
 
@@ -142,6 +141,9 @@ input[type=date]:invalid::-webkit-datetime-edit {
     height: 35px;
     align-items: center;
 }
+.title span{
+    width: calc(100%/5);
+}
 .titleAjout{
     background-color: rgb(185, 188, 189);
     display: flex;
@@ -150,6 +152,9 @@ input[type=date]:invalid::-webkit-datetime-edit {
     height: 35px;
     align-items: center;
 }
+.titleAjout span{
+    width: calc(100%/5);
+}
 .titleAjout button{
     border: none;
     border-radius: 5px;
@@ -157,7 +162,7 @@ input[type=date]:invalid::-webkit-datetime-edit {
     cursor: pointer;
 }
 .listDesTache{
-    height: 400px;
+    height: 520px;
     border: 1px solid rgb(40, 217, 199);
     border-radius: 0 8px 0 0;
 }
@@ -166,7 +171,7 @@ input[type=date]:invalid::-webkit-datetime-edit {
     border: 1px solid rgb(40, 217, 199);
     border-radius: 8px;
     width: 96%;
-    height: 100px;
+    height: 160px;
     margin: auto;
 }
 .list-desc span{
@@ -180,6 +185,15 @@ input[type=date]:invalid::-webkit-datetime-edit {
     top: 2rem;
     right: 2rem;
     display: none;
+}
+.notificationn{
+    background-color: #609DA0;
+    width: 30%;
+    border-radius: 8px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: block;
 }
 .notification h3{
     background-color: rgb(46, 107, 137);

@@ -48,12 +48,10 @@ function ajouterTache() {
     afficherTaches(dataTache);
 }
 
-function afficherTaches(taches) {
+function afficherTaches(tache) {
+  descruptionRecuper.textContent = '';
     listeAjout.innerHTML = ''; // Effacez le contenu actuel
-  console.log('====================================');
-  console.log(taches);
-  console.log('====================================');
-    taches.forEach((element, index) => {
+    tache.forEach((element, index) => {
         const divAfficheTache = document.createElement('div');
         divAfficheTache.classList.add('titleAjout');
         divAfficheTache.innerHTML = `
@@ -77,11 +75,82 @@ function afficherTaches(taches) {
         </span>
         `;
         listeAjout.appendChild(divAfficheTache);
+        descruptionRecuper.textContent = element.description;
     });
 }
 
 // Écoutez le clic sur le bouton "ajouter" et appelez la fonction ajouterTache
-ajouter.addEventListener("click", ajouterTache);
+//ajouter.addEventListener("click", ajouterTache);
+ajouter.addEventListener("click", (event) => {
+  event.preventDefault();
+  message();
+  ajouterTache();
+  location.reload();
+});
 
 // Au chargement de la page, affichez les tâches depuis le localStorage
 afficherTaches(dataTache);
+
+
+let terminer = 0;
+let niveau = 0;
+let encour = 0;
+
+affichgraph()
+ let myChart;
+function chart() {
+const ctx = document.getElementById('myChart');
+if(myChart){
+    myChart.destroy()
+}
+ myChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+        labels: ['terminer', 'nouveau', 'encours'],
+      datasets: [{
+        data: [terminer, nouveau, encour],
+        backgroundColor:['gray', 'blue', 'green'],
+        borderWidth: 1
+      }]
+    },
+    
+  });
+  
+}
+chart()
+
+function affichgraph() {
+    terminer = 0
+    nouveau = 0
+    encour = 0
+    dataTache.forEach(element => {
+        if (element.statut==="Terminé") {
+            terminer++ ;
+        }else  if (element.statut==="Nouveau") {
+            nouveau++;
+        } else  if (element.statut==="En cours") {
+            encour ++;
+        }
+    });
+} 
+
+
+const notification = document.querySelector('.notification');
+const textModifie = document.getElementById('textModifie');
+textModifie.textContent = '';
+function message(){
+  if (saiCategori.value === "" ||
+  saiTitre.value === "" ||
+  saiDate.value === "" ||
+  saiDescription.value === "" ||
+  saiStatu.value === "" 
+  ) {
+    notification.classList.remove("notification");
+    notification.classList.add("notificationn");
+    textModifie.textContent = 'Erreur! Veuillez remplir les champs';
+    setTimeout(() => {
+      notification.classList.add("notification");
+    notification.classList.remove("notificationn");
+    }, 2000);
+  }
+}
