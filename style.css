@@ -1,0 +1,196 @@
+.container{
+    width: 90%;
+    height: 93vh;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    margin:1.2rem auto;
+    border: 1px solid rgb(40, 217, 199);
+}
+/*Mise en forme de la partie des input*/
+.ajoutTache{
+    background-color: rgb(46, 107, 137);
+    color: white;
+    margin-top: -0.1rem;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 8px 0 0 0;
+}
+.div-input{
+    width: 25%;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid rgb(40, 217, 199);
+}
+.input-text{
+    text-align: center;
+    width: 85%;
+    margin: auto;
+}
+
+
+
+.inbox{
+    position:relative;
+}
+.inbox input{
+    width:90%;
+    border: 1px solid #609DA0;
+    border-radius: 5px;
+    outline: none;
+    padding: 8px;
+    margin:10px;
+    transition : 0.5s;
+}
+.inbox textarea{
+    width:90%;
+    border: 1px solid #609DA0;
+    border-radius: 5px;
+    outline: none;
+    padding: 8px;
+    margin:10px;
+    transition : 0.5s;
+}
+.inbox span{
+    position: absolute;
+    padding:10px;
+    z-index:1;
+    left:10px;
+    top:7px;
+    pointer-events:none;
+    transition: 0.5s;
+    color:rgba(128, 128, 128, 0.676);
+}
+.inbox input:valid ~ span,
+.inbox input:focus ~ span{
+    color:white;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 1em;
+    padding:0 5px;
+    background:#609DA0;
+    border-radius: 5px;
+
+}
+.inbox textarea:valid ~ span,
+.inbox textarea:focus ~ span{
+    color:white;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 1em;
+    padding:0 5px;
+    background:#609DA0;
+    border-radius: 5px;
+
+}
+.inbox input:valid,
+.inbox input:focus{
+    border:1px solid #609DA0;
+}
+.pp{
+    display:none;
+    transition: 0.5s;
+}
+.inbox input:valid ~ .pp,
+.inbox input:focus ~ .pp{
+    display:block;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 1em;
+    padding:0 2px;
+}
+input[type=date]:invalid::-webkit-datetime-edit {
+    color: #999;
+}
+
+
+
+#ajouter{
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid rgb(40, 217, 199);
+    background-color: rgb(46, 107, 137);
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.div-statut{
+    border: 1px solid rgb(40, 217, 199);
+    border-radius: 0 0 0 8px;
+    text-align: center;
+    width: 100%;
+    height: 205px;
+}
+
+
+
+
+
+
+.div-list{
+    width: 75%;
+    text-align: center;
+}
+.list{
+    border: 1px solid rgb(40, 217, 199);
+    width: 96%;
+    margin: auto;
+}
+.title{
+    background-color: rgb(46, 107, 137);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    height: 35px;
+    align-items: center;
+}
+.titleAjout{
+    background-color: rgb(185, 188, 189);
+    display: flex;
+    justify-content: space-around;
+    font-size: 16px;
+    height: 35px;
+    align-items: center;
+}
+.titleAjout button{
+    border: none;
+    border-radius: 5px;
+    height: 28px;
+    cursor: pointer;
+}
+.listDesTache{
+    height: 400px;
+    border: 1px solid rgb(40, 217, 199);
+    border-radius: 0 8px 0 0;
+}
+.list-desc{
+    text-align: start;
+    border: 1px solid rgb(40, 217, 199);
+    border-radius: 8px;
+    width: 96%;
+    height: 60px;
+    margin: auto;
+}
+
+
+
+
+.notification{
+    position: absolute;
+    background-color: #fff;
+    top: 0;
+    right: -40px;
+    text-align: center;
+    border: 1px solid #609DA0;
+    border-radius: 10px;
+    z-index: 10;
+    display: none;
+}
+.notification>h3{
+    background-color: #609DA0;
+    color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.notification>p{
+    padding: 0 10px;
+}

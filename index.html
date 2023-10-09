@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>To do list</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="div-input">
+        <h1 class="ajoutTache">Ajouter une tache</h1>
+        <div class="input-text">
+          <div class="inbox">
+            <input type="text" list="browsers" id="saiCategori"/><br />
+            <span id="meme">Catégorie</span>
+            <datalist id="browsers">
+              <option value="Academique"></option>
+              <option value="Extra-academique"></option>
+              <option value="Distraction"></option>
+            </datalist>
+          </div>
+          <div class="inbox">
+            <input type="text" id="saiTiter"/><br />
+            <span id="meme">Titre</span>
+          </div>
+          <div class="inbox">
+            <input type="date" id="saiDate"/><br />
+            <span id="meme">Date</span>
+          </div>
+          <div class="inbox">
+            <textarea
+              name="description"
+              id="description"
+              cols="20"
+              rows="3"
+              class="saiDescription"
+            ></textarea
+            ><br />
+            <span id="meme">Description</span>
+          </div>
+          <div class="inbox">
+            <input type="text" list="browsers" id="saiStatu"/><br />
+            <span id="meme">Statut</span>
+            <datalist id="browsers">
+              <option value="Nouveau"></option>
+              <option value="En cours"></option>
+              <option value="Terminé"></option>
+            </datalist>
+          </div>
+          <button id="ajouter">Ajouter</button>
+        </div>
+        <div class="div-statut">
+          <h1 style="color: rgb(40, 217, 199); margin-top: -0.1rem">Statu</h1>
+          <canvas id="myChart"></canvas>
+        </div>
+      </div>
+      <div class="div-list">
+        <div class="listDesTache">
+          <h2>Liste des taches</h2>
+          <div class="notification">
+            <h3>Ajout de la tache</h3>
+            <p>l'enregistrement s'est effectué avec succès</p>
+        </div>
+          <div class="list">
+            <div class="title">
+              <span>#</span>
+              <span>Date</span>
+              <span>Titre</span>
+              <span>Categorie</span>
+              <span>Operations</span>
+            </div>
+            <div class="listeAjout">
+              <!-- <div class="titleAjout">
+                <span>1</span>
+                <span>07-10-2023</span>
+                <span>Projet test</span>
+                <span>Academique</span>
+                <span>
+                  <button
+                    id="btnVusial"
+                    style="background-color: rgb(46, 107, 137)"
+                  >
+                    <i class="fa-solid fa-eye"></i>
+                  </button>
+                  <button id="btnModifier" style="background-color: aqua">
+                    <i class="fa-solid fa-pen"></i>
+                  </button>
+                  <button id="btnSupprimer" style="background-color: red">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </span>
+              </div> -->
+            </div>
+            <div class="p-0 infotache d-flex flex-column align-items-start">
+                        
+            </div>
+          </div>
+        </div>
+        <div class="descruptionRecuper">
+          <h2>Description</h2>
+          <div class="list-desc">
+            <span id="descruptionRecuper">yughjbn</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="" class="sortie"></a>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
