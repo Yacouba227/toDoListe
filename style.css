@@ -1,6 +1,5 @@
 .container{
-    width: 90%;
-    height: 93vh;
+    width: 96%;
     border-radius: 8px;
     display: flex;
     justify-content: center;
@@ -19,7 +18,7 @@
     border-radius: 8px 0 0 0;
 }
 .div-input{
-    width: 25%;
+    width: 28%;
     border-radius: 8px 0 0 8px;
     border: 1px solid rgb(40, 217, 199);
 }
@@ -167,30 +166,31 @@ input[type=date]:invalid::-webkit-datetime-edit {
     border: 1px solid rgb(40, 217, 199);
     border-radius: 8px;
     width: 96%;
-    height: 60px;
+    height: 100px;
     margin: auto;
 }
-
-
-
-
+.list-desc span{
+    padding-left: 12px;
+}
 .notification{
+    background-color: #609DA0;
+    width: 30%;
+    border-radius: 8px;
     position: absolute;
-    background-color: #fff;
-    top: 0;
-    right: -40px;
-    text-align: center;
-    border: 1px solid #609DA0;
-    border-radius: 10px;
-    z-index: 10;
+    top: 2rem;
+    right: 2rem;
     display: none;
 }
-.notification>h3{
-    background-color: #609DA0;
-    color: #fff;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+.notification h3{
+    background-color: rgb(46, 107, 137);
+    border-radius: 8px 8px 0 0;
+    color: white;
+    font-size: 29px;
+    height: 45px;
+    margin-top: -1rem;
 }
-.notification>p{
-    padding: 0 10px;
+.notification p{
+    font-size: 22px;
+    width: 80%;
+    margin: auto;
 }
