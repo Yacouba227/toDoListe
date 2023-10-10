@@ -66,16 +66,56 @@ function afficherTaches(tache) {
           >
             <i class="fa-solid fa-eye"></i>
           </button>
-          <button id="btnModifier" style="background-color: aqua">
+          <button id="btnModifier${index}" style="background-color: aqua">
             <i class="fa-solid fa-pen"></i>
           </button>
-          <button id="btnSupprimer" style="background-color: red">
+          <button id="btnSupprimer${index}" style="background-color: red">
             <i class="fa-solid fa-trash"></i>
           </button>
         </span>
         `;
         listeAjout.appendChild(divAfficheTache);
         descruptionRecuper.textContent = element.description;
+
+// ------------------------------------------------------------
+const btnModifier = document.getElementById(`btnModifier${index}`);
+    btnModifier.addEventListener('click', () => {
+        // Récupérez la tâche à modifier en utilisant l'index
+        const tacheAModifier = dataTache[index];
+  
+        // Remplissez les champs de saisie avec les données actuelles de la tâche
+        saiCategori.value = tacheAModifier.categorie;
+        saiTitre.value = tacheAModifier.titre;
+        saiDate.value = tacheAModifier.date;
+        saiDescription.value = tacheAModifier.description;
+        saiStatu.value = tacheAModifier.statut;
+  
+        // Supprimez la tâche du tableau dataTache
+        dataTache.splice(index, 1);
+  
+        // Mettez à jour le localStorage avec le tableau modifié
+        localStorage.setItem("key", JSON.stringify(dataTache));
+  
+        // Affichez à nouveau la liste de tâches mise à jour
+        afficherTaches(dataTache);
+        affichgraph();
+        chart();
+    });
+  
+    const btnSupprimer = document.getElementById(`btnSupprimer${index}`);
+    btnSupprimer.addEventListener('click', () => {
+        // Supprimez la tâche du tableau dataTache en utilisant l'index
+        dataTache.splice(index, 1);
+  
+        // Mettez à jour le localStorage avec le tableau modifié
+        localStorage.setItem("key", JSON.stringify(dataTache));
+  
+        // Affichez à nouveau la liste de tâches mise à jour
+        afficherTaches(dataTache);
+        affichgraph();
+        chart();
+    });
+//-------------------------------------------------------
     });
 }
 
@@ -154,3 +194,4 @@ function message(){
     }, 2000);
   }
 }
+
