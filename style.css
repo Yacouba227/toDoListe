@@ -59,7 +59,6 @@
     top:7px;
     pointer-events:none;
     transition: 0.5s;
-    color:rgba(128, 128, 128, 0.676);
 }
 .inbox input:valid ~ span,
 .inbox input:focus ~ span{
@@ -131,6 +130,7 @@ input[type=date]:invalid::-webkit-datetime-edit {
     border: 1px solid rgb(40, 217, 199);
     width: 96%;
     margin: auto;
+    border-radius: 12px;
 }
 .title{
     background-color: rgb(46, 107, 137);
@@ -140,12 +140,12 @@ input[type=date]:invalid::-webkit-datetime-edit {
     font-size: 20px;
     height: 35px;
     align-items: center;
+    border-radius: 12px 12px 0 0;
 }
 .title span{
     width: calc(100%/5);
 }
 .titleAjout{
-    background-color: rgb(185, 188, 189);
     display: flex;
     justify-content: space-around;
     font-size: 16px;
@@ -207,4 +207,55 @@ input[type=date]:invalid::-webkit-datetime-edit {
     font-size: 22px;
     width: 80%;
     margin: auto;
+}
+
+
+.divVisible{
+    background-color: rgb(203, 201, 205);
+    position: absolute;
+    border-radius: 12px;
+    width: 400px;
+    border: 1px solid rgb(40, 217, 199);
+    top: 12rem;
+    right: 18rem;
+    display: none;
+}
+.divVisible .pm{
+    background-color: rgb(46, 107, 137);
+    color: white;
+    margin-top: -0.2rem;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 8px 8px 0 0;
+}
+.contenu{
+    display: flex;
+}
+.contenuTitre{
+    color: rgb(46, 107, 137);
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    margin-left: 8px;
+}
+.contenuLibele{
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+    font-size: 20px;
+}
+.contenu span{
+    margin-bottom: 15px;
+}
+.fermer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100vw;
+    height: 100vh;
+    z-index: 9;
+    display: none;
+    cursor: default;
 }
