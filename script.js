@@ -20,31 +20,54 @@ if (!localStorage.getItem("key")) {
 dataTache = JSON.parse(localStorage.getItem("key"));
 
 function ajouterTache() {
-  const categorieValue = saiCategori.value;
-  const titreValue = saiTitre.value;
-  const dateValue = saiDate.value;
-  const descriptionValue = saiDescription.value;
-  const statutValue = saiStatu.value;
-
-  // Ajoutez la nouvelle tâche au tableau dataTache
-  dataTache.push({
-    categorie: categorieValue,
-    titre: titreValue,
-    date: dateValue,
-    description: descriptionValue,
-    statut: statutValue,
-  });
-
-  // Sauvegardez le tableau mis à jour dans le localStorage
-  localStorage.setItem("key", JSON.stringify(dataTache));
-
-  // Réinitialisez les champs de saisie
-  saiCategori.value = "";
-  saiTitre.value = "";
-  saiDate.value = "";
-  saiDescription.value = "";
-  saiStatu.value = "";
-
+  if (
+    saiCategori.value === "" ||
+    saiTitre.value === "" ||
+    saiDate.value === "" ||
+    saiDescription.value === "" ||
+    saiStatu.value === ""
+  ) {
+    notification.classList.remove("notification");
+    notification.classList.add("notificationn");
+    textModifie.textContent = "Erreur! Veuillez remplir les champs";
+    setTimeout(() => {
+      notification.classList.add("notification");
+      notification.classList.remove("notificationn");
+    }, 2000);
+  }else{
+    const categorieValue = saiCategori.value;
+    const titreValue = saiTitre.value;
+    const dateValue = saiDate.value;
+    const descriptionValue = saiDescription.value;
+    const statutValue = saiStatu.value;
+  
+    // Ajoutez la nouvelle tâche au tableau dataTache
+    dataTache.push({
+      categorie: categorieValue,
+      titre: titreValue,
+      date: dateValue,
+      description: descriptionValue,
+      statut: statutValue,
+    });
+  
+    // Sauvegardez le tableau mis à jour dans le localStorage
+    localStorage.setItem("key", JSON.stringify(dataTache));
+  
+    // Réinitialisez les champs de saisie
+    saiCategori.value = "";
+    saiTitre.value = "";
+    saiDate.value = "";
+    saiDescription.value = "";
+    saiStatu.value = "";
+  
+    notification.classList.remove("notification");
+    notification.classList.add("notificationn");
+    textModifie.textContent = "La tache ete ajouter avec succes";
+    setTimeout(() => {
+      notification.classList.add("notification");
+      notification.classList.remove("notificationn");
+    }, 2000);  
+  }
   // Affichez les tâches
   afficherTaches(dataTache);
 }
@@ -56,7 +79,7 @@ function afficherTaches(tache) {
     const divAfficheTache = document.createElement("div");
     divAfficheTache.classList.add("titleAjout");
     divAfficheTache.innerHTML = `
-        <span>${index + 1}</span>
+        <span class="idenfiant">${index + 1}</span>
         <span>${element.date}</span>
         <span>${element.titre}</span>
         <span>${element.categorie}</span>
@@ -76,7 +99,22 @@ function afficherTaches(tache) {
         </span>
         `;
     listeAjout.appendChild(divAfficheTache);
-    descruptionRecuper.textContent = element.description;
+    // descruptionRecuper.textContent = element.description;
+    //Pour recupere la description 
+    const titleAjout = document.querySelector(".listeAjout");
+    const idenfiant = document.querySelectorAll('.idenfiant');
+    idenfiant.forEach(element => {
+      if (element.textContent % 2 === 0) {
+        element.parentElement.style.backgroundColor = '#b7c1c1';
+      } 
+    });
+    console.log(idenfiant);
+    //
+    titleAjout.addEventListener("click", (event) => {
+      event.preventDefault();
+      descruptionRecuper.textContent = element.description;
+      console.log("sdfghj");
+    });
 
     // ------------------------------------------------------------
     const btnModifier = document.getElementById(`btnModifier${index}`);
@@ -159,9 +197,10 @@ function afficherTaches(tache) {
 //ajouter.addEventListener("click", ajouterTache);
 ajouter.addEventListener("click", (event) => {
   event.preventDefault();
-  message();
+  //message();
   ajouterTache();
-  location.reload();
+  //condition();
+  //location.reload();
 });
 
 // Au chargement de la page, affichez les tâches depuis le localStorage
@@ -212,7 +251,7 @@ function affichgraph() {
 const notification = document.querySelector(".notification");
 const textModifie = document.getElementById("textModifie");
 textModifie.textContent = "";
-function message() {
+/* function message() {
   if (
     saiCategori.value === "" ||
     saiTitre.value === "" ||
@@ -228,4 +267,25 @@ function message() {
       notification.classList.remove("notificationn");
     }, 2000);
   }
-}
+} 
+const messageee = document.querySelector('.message');
+const info = document.getElementById('info');
+function condition() {
+  if (saiCategori.value === '' ||
+  saiTitre.value === '' ||
+  saiDate.value === '' ||
+  saiStatu.value === '' ||
+  saiDescription.value === ''
+  ) {
+    info.textContent = 'Veuillez remplir tout les champ';
+    messageee.style.display = 'block';
+    setTimeout(() => {
+      messageee.style.display = 'none'
+    }, 1000);
+  }
+/* saiCategori.value
+saiTitre.value
+saiDate.value
+saiStatu.value
+saiDescription.value 
+}*/

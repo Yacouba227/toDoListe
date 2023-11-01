@@ -259,3 +259,17 @@ input[type=date]:invalid::-webkit-datetime-edit {
     display: none;
     cursor: default;
 }
+
+.message{
+    background-color: #999;
+    width: 28%;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    display: none;
+}
+#info{
+    color: white;
+    font-size: 22px;
+}
