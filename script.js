@@ -83,7 +83,7 @@ function afficherTaches(tache) {
         <span>${element.date}</span>
         <span>${element.titre}</span>
         <span>${element.categorie}</span>
-        <span>
+        <span class="flexDis">
           <button
             id="btnVusial${index}"
             style="background-color: rgb(46, 107, 137)"

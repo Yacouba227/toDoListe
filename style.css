@@ -273,3 +273,28 @@ input[type=date]:invalid::-webkit-datetime-edit {
     color: white;
     font-size: 22px;
 }
+@media screen and (max-width: 425px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .div-input{
+        width: 100%;
+    }
+    .div-list{
+        width: 100%;
+    }
+    .titleAjout, .title{
+        font-size: 13px;
+    }
+    .flexDis{
+        display: flex;
+        justify-content: space-around;
+    }
+    .flexDis button{
+        width: 20px;
+        height: 22px;
+        padding: 0;
+    }
+  }
